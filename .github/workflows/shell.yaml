@@ -10,14 +10,14 @@ jobs:  # task 단위
           pwd
           echo "File list:"
           ls -la
-      - name: Check file  # step2의 ID
+      - name: Check file  
         run: |
           if [ -f "README.md" ]; then
             echo "File exists"
           else
             echo "File not found"
           fi
-      - name: Repeat commands  # step3의 ID
+      - name: Repeat commands  
         run: |
           for i in 1 2 3
           do 

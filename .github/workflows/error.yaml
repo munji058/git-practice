@@ -1,7 +1,7 @@
-name: YAML error
-on: push
-jobs:
-  run:
-    runs-on: ubuntu-latest
+name: Workflow error  # 워크플로우 ID
+on: push  # event trigger
+jobs:  # task 단위
+  run:  # job ID 
+    runs-on: ubuntu-latest  # 실행 환경
     steps:
-        -run: echo "YAML Syntax Error"
+      - run: date
