@@ -1,0 +1,12 @@
+name: Operator Example
+on: workflow_dispatch
+jobs:
+  operator:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 논리 연산 (Logical Operators)
+      - name: Logical Operators
+        run: |
+          echo "AND: ${{ true && false }}"
+          echo "OR: ${{ true || false }}"
+          echo "NOT: ${{ !true }}"
