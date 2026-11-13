@@ -17,6 +17,7 @@ jobs:
       - name: Create Variables
         id: create
         run: |
+          echo "DYNAMIC=Hello ENV" >> "$GITHUB_ENV"
           echo "result=Hello OUTPUT" >> "$GITHUB_OUTPUT"
 
       # 3. 생성한 값 사용
@@ -24,4 +25,6 @@ jobs:
         env:
           OUTPUT_VALUE: ${{ steps.create.outputs.result }}
         run: |
+          echo "Normal ENV = $MESSAGE"
+          echo "GITHUB_ENV = $DYNAMIC"
           echo "GITHUB_OUTPUT = $OUTPUT_VALUE"
