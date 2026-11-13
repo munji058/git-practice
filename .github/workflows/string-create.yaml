@@ -10,6 +10,7 @@ jobs:
           RESULT_FORMAT_1: ${{ format('Hello {0}', 'GitHub') }}
           RESULT_FORMAT_2: ${{ format('{0} {1}', 'Hello', 'World') }}
           RESULT_FORMAT_3: ${{ format('Name {0}, Age {1}', 'Kim', 20) }}
+          # OR -> RESULT_FORMAT_3: "${{ format('Name: {0}, Age: {1}', 'Kim', 20) }}"
 
           # join() 함수
           RESULT_JOIN_1: ${{ join(fromJSON('["Apple","Banana","Cherry"]'), ', ') }}
