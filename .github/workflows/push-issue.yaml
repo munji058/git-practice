@@ -1,0 +1,16 @@
+name: Assignment - Create Issue on Push
+on: [push]
+permissions:
+  issues: write
+jobs:
+  create-issue:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Create issue with GitHub CLI
+        run: |
+          gh issue create \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "[Push] $GITHUB_REF_NAME 업데이트" \
+            --body "$GITHUB_ACTOR 사용자가 push했습니다. 실행 기록: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
